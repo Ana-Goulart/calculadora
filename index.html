@@ -1,115 +1,116 @@
-<!DOCTYPE html>
-<head>
-    <meta charset="utf-8">
-    <title>Calculadora</title>
-    <meta name="viewport" content="width=device-whdth, initial-scale=1.0">
-    <style>
-        *{
-            margin: 0;
-            padding: 0;
-        }
-        .fundo{
-            background-image: linear-gradient(45deg,black, pink );
-            height: 750px;
-            color: white;
-            font-family: Arial, Helvetica, sans-serif;
-            text-align: center;
-        }
-        .calculadora{
-            position: absolute;
-            background-color: rgba(0, 0, 0, 0.8);
-            top: 150px;
-            left: 625px;
-            transform: translate(-50% -50%);
-            border-radius: 30px;
-            padding: 15px;
-        }
-        .bt{
-            width: 50px;
-            height: 50px;
-            font-size: 25px;
-            margin: 3px;
-            cursor: pointer;
-            background-color: rgb(31,31,31);
-            border: none;
-            color: white;
-        }
-        .bt:hover{
-            background-color: black;
-        }
-        #resultado{
-            width: 210px;
-            height: 30px;
-            background-color: white;
-            margin: 5px;
-            font-size: 25px;
-            color:black;
-            text-align: right;
-            padding: 5px;
-        }
-    </style>
-</head>
-<body>
-   <div class="fundo">
-     <div class="calculadora">
-        <h1>Calculadora</h1>
-        <p id="resultado"></p>
-        <table>
-            <tr>
-                <td><button class="bt" onclick="clean()">C</button></td>
-                <td><button class="bt" onclick="back()"><</button></td>
-                <td><button class="bt" onclick="insert('/')">/</button></td>
-                <td><button class="bt" onclick="insert('*')">*</button></td>
-            </tr>
-            <tr>
-                <td><button class="bt" onclick="insert('7')">7</button></td>
-                <td><button class="bt" onclick="insert('8')">8</button></td>
-                <td><button class="bt" onclick="insert('9')">9</button></td>
-                <td><button class="bt" onclick="insert('-')">-</button></td>
-            </tr>
-            <tr>
-                <td><button class="bt" onclick="insert('4')">4</button></td>
-                <td><button class="bt" onclick="insert('5')">5</button></td>
-                <td><button class="bt" onclick="insert('6')">6</button></td>
-                <td><button class="bt" onclick="insert('+')">+</button></td>
-            </tr>
-            <tr>
-                <td><button class="bt" onclick="insert('1')">1</button></td>
-                <td><button class="bt" onclick="insert('2')">2</button></td>
-                <td><button class="bt" onclick="insert('3')">3</button></td>
-                <td rowspan="2"><button class="bt" style="height: 106px;" onclick="calcular()">=</button></td>
-            </tr>
-            <tr>
-                <td colspan="2" ><button class="bt" style="width: 106px;" onclick="insert('0')">0</button></td>
-                <td><button class="bt" onclick="insert('.')">.</button></td>
-                
-            </tr>
-        </table>
-     </div>
-   </div>
-   <script>
-    function insert(num){
-        var numero = document.getElementById("resultado").innerHTML
-        document.getElementById('resultado').innerHTML = numero + num
-        
-    }
-    function clean(){
-        document.getElementById('resultado').innerHTML = " "
-    }
-    function back(){
-        var resultado = document.getElementById('resultado').innerHTML
-        document.getElementById('resultado').innerHTML = resultado.substring(0, resultado.length -1)
-    }
-    function calcular(){
-        var resultado = document.getElementById('resultado').innerHTML
-        if(resultado){
-            document.getElementById('resultado').innerHTML = eval(resultado)
-        }else{
-            document.getElementById('resultado').innerHTML = "Vazio"
-        }
-    }
-   </script>
+    <!DOCTYPE html>
+    <head>
+        <meta charset="utf-8">
+        <title>Calculadora</title>
+        <style>
+            *{ /*este * significa todo o texto*/
+                margin: 0; /* esses dois elementos remove todas as bordas de qualquer elemento que esteja do lado*/
+                padding: 0;
+            }
+            .fundo{ 
+                background-image: linear-gradient(45deg,black, pink ); /*Plano de fundo da imagem, linear-gradient e um degrade e dentro do parenteses define a cor que começa e que termina*/
+                height: 750px; /*altura do elemento na pagina,neste caso completou a página toda*/
+                color: rgb(255, 255, 255); /* esta e a cor do texto todo*/
+                font-family: Arial, Helvetica, sans-serif;/* fonte*/
+                text-align: center; /*alinhamento do texto*/
+            }
+            .calculadora{
+                position: absolute; /*posição absolute define que ele pode ser posicionado em qualquer lugar independente de outros elementos*/
+                background-color: rgba(0, 0, 0, 0.8); /*Cor da calculadora, este rgba define a cor do elemento nos 3 primeiros blocos e no ultimo define a transparencia, o maximo é 1, que e 100%*/
+                top: 150px;/*essa linha define a distancia do elemento em relação ao topo*/
+                left: 625px;/*essa linha define a distancia da esquerda*/
+                border-radius: 30px;/*esta tipo de borda define tanto que o elemento vai ser arrendondado*/
+                padding: 15px;/*esse e o espaço entre o conteudo e a borda e outros elementos vizinhos ENTRE OS CONTEUDOS INTERNOS*/
+            }
+            .bt{
+                width: 50px; /*isso define a largura do elemento*/
+                height: 50px;/*define o tamanho do elemento*/
+                font-size: 25px; /*tamanho da fonte*/
+                margin: 3px;/*define a distançia entre elementos EXTERNOS*/
+                cursor: pointer; /*Iisso define que este elemento e algo clicavel*/
+                background-color: rgb(31,31,31);/*isso define a cor de fundo do elemento*/
+                border: none;/*remove a borda do elemento*/
+                color: white;/*cor do texto*/
+            }
+            .bt:hover{
+                background-color: black;/*esta propriedade:hover descrita acima faz com que, quando o usuario passa o mouse no elemento ele ficara com a cor preta*/
+            }
+            #resultado{
+                width: 210px;/*largura do elemento*/
+                height: 30px;/*altura do elemento*/
+                background-color: white;/*cor de fundo*/
+                margin: 5px; /*define a distançia entre elementos EXTERNOS*/
+                font-size: 25px; /*tamanho da fonte*/
+                color:black;/*cor do texto*/
+                padding: 5px; /*distancia entre elementos INTERNOS*/
+            }
+        </style>
+    </head>
+    <body>
+    <div class="fundo">
 
-</body>
+        <div class="calculadora">
+            <h1>Calculadora</h1>
+            <p id="resultado"></p>
+            <table> <!--Criando uma tabela-->
+                <tr><!--tr: linhas da tabela, td: coluna das tabelas-->
+                    <td><button class="bt" onclick="clean()">C</button></td><!--onclick e para quando o usuário clicar vai chamar a função clean() não retornando nenhum valor, apenas executando a função-->
+                    <td><button class="bt" onclick="back()"><</button></td>
+                    <td><button class="bt" onclick="insert('/')">/</button></td><!--aqui chamou a função mas colocou o retorno em um caracter que é um sinal de operação-->
+                    <td><button class="bt" onclick="insert('*')">*</button></td>
+                </tr>
+                <tr>
+                    <td><button class="bt" onclick="insert(7)">7</button></td><!--aqui chama a função insert e retorna o valor 7, este valor aparecerá na tela-->
+                    <td><button class="bt" onclick="insert(8)">8</button></td>
+                    <td><button class="bt" onclick="insert(9)">9</button></td>
+                    <td><button class="bt" onclick="insert('-')">-</button></td>
+                </tr>
+                <tr>
+                    <td><button class="bt" onclick="insert(4)">4</button></td>
+                    <td><button class="bt" onclick="insert(5)">5</button></td>
+                    <td><button class="bt" onclick="insert(6)">6</button></td>
+                    <td><button class="bt" onclick="insert('+')">+</button></td>
+                </tr>
+                <tr>
+                    <td><button class="bt" onclick="insert(1)">1</button></td>
+                    <td><button class="bt" onclick="insert(2)">2</button></td>
+                    <td><button class="bt" onclick="insert(3)">3</button></td>
+                    <td rowspan="2"><button class="bt" style="height: 106px;" onclick="calcular()">=</button></td>
+                </tr>
+                <tr>
+                    <td colspan="2" ><button class="bt" style="width: 106px;" onclick="insert('0')">0</button></td>
+                    <td><button class="bt" onclick="insert('.')">.</button></td>
+                    
+                </tr>
+            </table>
+        </div>
+    </div>
+    <script>
+        //função para inserir o numero na tela 
+        function insert(num){ //inserir o numero passando pelo parametro nun
+            var numero = document.getElementById("resultado").innerHTML//criou a variavel numero que vai armazenar o valor do id resultado definido nos botões de cada número
+            document.getElementById('resultado').innerHTML = numero + num
+            // esta linha acima pega a variavel numero que foi criada e vai adicionando as string por exemplo quando o usuario clicar em um numero e depois clicar em outro ele vai concatenar esses numero e junta-los, por exeplo o usuario clicou no numero 1 depois ele cliclou no numero 3 ai vai concatenar e ficar so uma string "13"
+        }
+        function clean(){//função para limpar a tela quando for chamada
+            document.getElementById('resultado').innerHTML = " "
+        }
+        function back(){ //função para limpar a ultima string sempre que for chamada
+            var resultado = document.getElementById('resultado').innerHTML
+            document.getElementById('resultado').innerHTML = resultado.substring(0, resultado.length -1)
+            //esta linha de cima usa o substring e recebe 2 parametros
+        }
+        function calcular(){//função que calcula os numeros
+            var resultado = document.getElementById('resultado').innerHTML
+            if(resultado){//pegando as strings
+                document.getElementById('resultado').innerHTML = eval(resultado)
+                //o eval pega a string e se for alguma expresão ele realiza e retorna na variavel criada la em cima este resultado
+            }else{//se caso estiver vazio retorn vazio em resultado
+                document.getElementById('resultado').innerHTML = "Vazio"
+            }
+        }
+    </script>
 
-</html>
+    </body>
+
+    </html>
