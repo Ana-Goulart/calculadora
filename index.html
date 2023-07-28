@@ -2,49 +2,7 @@
     <head>
         <meta charset="utf-8">
         <title>Calculadora</title>
-        <style>
-            *{ /*este * significa todo o texto*/
-                margin: 0; /* esses dois elementos remove todas as bordas de qualquer elemento que esteja do lado*/
-                padding: 0;
-            }
-            .fundo{ 
-                background-image: linear-gradient(45deg,black, pink ); /*Plano de fundo da imagem, linear-gradient e um degrade e dentro do parenteses define a cor que começa e que termina*/
-                height: 750px; /*altura do elemento na pagina,neste caso completou a página toda*/
-                color: rgb(255, 255, 255); /* esta e a cor do texto todo*/
-                font-family: Arial, Helvetica, sans-serif;/* fonte*/
-                text-align: center; /*alinhamento do texto*/
-            }
-            .calculadora{
-                position: absolute; /*posição absolute define que ele pode ser posicionado em qualquer lugar independente de outros elementos*/
-                background-color: rgba(0, 0, 0, 0.8); /*Cor da calculadora, este rgba define a cor do elemento nos 3 primeiros blocos e no ultimo define a transparencia, o maximo é 1, que e 100%*/
-                top: 150px;/*essa linha define a distancia do elemento em relação ao topo*/
-                left: 625px;/*essa linha define a distancia da esquerda*/
-                border-radius: 30px;/*esta tipo de borda define tanto que o elemento vai ser arrendondado*/
-                padding: 15px;/*esse e o espaço entre o conteudo e a borda e outros elementos vizinhos ENTRE OS CONTEUDOS INTERNOS*/
-            }
-            .bt{
-                width: 50px; /*isso define a largura do elemento*/
-                height: 50px;/*define o tamanho do elemento*/
-                font-size: 25px; /*tamanho da fonte*/
-                margin: 3px;/*define a distançia entre elementos EXTERNOS*/
-                cursor: pointer; /*Iisso define que este elemento e algo clicavel*/
-                background-color: rgb(31,31,31);/*isso define a cor de fundo do elemento*/
-                border: none;/*remove a borda do elemento*/
-                color: white;/*cor do texto*/
-            }
-            .bt:hover{
-                background-color: black;/*esta propriedade:hover descrita acima faz com que, quando o usuario passa o mouse no elemento ele ficara com a cor preta*/
-            }
-            #resultado{
-                width: 210px;/*largura do elemento*/
-                height: 30px;/*altura do elemento*/
-                background-color: white;/*cor de fundo*/
-                margin: 5px; /*define a distançia entre elementos EXTERNOS*/
-                font-size: 25px; /*tamanho da fonte*/
-                color:black;/*cor do texto*/
-                padding: 5px; /*distancia entre elementos INTERNOS*/
-            }
-        </style>
+        <link rel="stylesheet" type="text/css" href="style.css">
     </head>
     <body>
     <div class="fundo">
